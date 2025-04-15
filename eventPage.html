@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Eventbrite Event</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.3rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #f05537;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Create Event</h2>
+  <form id="eventForm">
+    <label for="name">Event Name</label>
+    <input type="text" id="name" name="event.name.html" required>
+
+    <label for="description">Event Description </label>
+    <textarea id="description" name="event.description.html" rows="5" required></textarea>
+
+    <label for="start">Start Date and Time (UTC)</label>
+    <input type="datetime-local" id="start" name="event.start.utc" required>
+
+    <label for="start_timezone">Start Timezone</label>
+    <input type="text" id="start_timezone" name="event.start.timezone" value="UTC" required>
+
+    <label for="end">End Date and Time (UTC)</label>
+    <input type="datetime-local" id="end" name="event.end.utc" required>
+
+    <label for="end_timezone">End Timezone</label>
+    <input type="text" id="end_timezone" name="event.end.timezone" value="UTC" required>
+
+    <label for="currency">Currency</label>
+    <select id="currency" name="event.currency" required>
+      <option value="USD">USD</option>
+      <option value="EUR">EUR</option>
+      <option value="GBP">GBP</option>
+      <option value="AUD">AUD</option>
+      <option value="CAD">CAD</option>
+    </select>
+
+    <button type="submit">Create Event</button>
+  </form>
+
+  <script>
+    document.getElementById("eventForm").addEventListener("submit", async function(e) {
+      e.preventDefault();
+
+const formData = new FormData(e.target);
+const data = {};
+
+for (const [key, value] of formData.entries()) {
+  let val = value;
+    //timezone has to be included in the start & end times
+  // Convert datetime-local to ISO UTC format for date fields
+  if (key.includes("start.utc") || key.includes("end.utc")) {
+    const localDate = new Date(value);
+    val = localDate.toISOString().split(".")[0] + "Z"; // Remove milliseconds // returns full UTC ISO 8601
+  }
+
+  const keys = key.split(".");
+  if (keys.length === 3) {
+    data[keys[0]] = data[keys[0]] || {};
+    data[keys[0]][keys[1]] = data[keys[0]][keys[1]] || {};
+    data[keys[0]][keys[1]][keys[2]] = val;
+  } else if (keys.length === 2) {
+    data[keys[0]] = data[keys[0]] || {};
+    data[keys[0]][keys[1]] = val;
+  } else {
+    data[key] = val;
+  }
+}
+
+    // Ensure the API receives the correct structure
+    data.event.start = {
+      timezone: "America/Los_Angeles",
+      utc: data.event.start.utc,
+    };
+    data.event.end = {
+      timezone: "America/Los_Angeles",
+      utc: data.event.end.utc,
+    };
+
+      console.log("Data to be sent:", data);
+
+      //timezone has to be included in the start & end times
+      try {
+        const response = await fetch('http://localhost:3000/create-event', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
+  
+        const result = await response.json();
+        if (result.success) {
+          alert(`Event created successfully! Event ID: ${result.eventId}`);
+        } else {
+          alert(`Failed to create event: ${JSON.stringify(result.error)}`);
+        }
+      } catch (err) {
+        console.error('Error sending request:', err);
+        alert('Something went wrong!');
+      }
+    });
+  </script>
+  
+</body>
+</html>
