@@ -36,6 +36,20 @@ app.post('/create-event', async (req, res) => {
   }
 });
 
+const { checkoutTicket } = require('./db');
+
+app.post('/checkout', async (req, res) => {
+  const { eventId, ticketClassId, attendee, quantity } = req.body;
+
+  try {
+    const order = await checkoutTicket(eventId, ticketClassId, attendee, quantity);
+    res.json({ success: true, order });
+  } catch (error) {
+    res.status(500).json({ success: false, error: error.message });
+  }
+});
+
+
 const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
