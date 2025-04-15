@@ -1,10 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// Path to the JSON file where events will be stored
 const eventsFilePath = path.join(__dirname, 'events.json');
 
-// Load events from the file if it exists
 let events = [];
 if (fs.existsSync(eventsFilePath)) {
   const fileData = fs.readFileSync(eventsFilePath, 'utf8');
@@ -17,7 +15,7 @@ if (fs.existsSync(eventsFilePath)) {
  * @param {string} eventId - The event ID received from the Eventbrite API.
  */
 function addEvent(eventData, eventId) {
-console.log("Adding event:", eventData, eventId); // Debug log
+console.log("Adding event:", eventData, eventId);
   const newEvent = {
     name: eventData.event?.name?.html || null,
     description: eventData.event?.description?.html || null,
@@ -37,7 +35,6 @@ console.log("Adding event:", eventData, eventId); // Debug log
   events.push(newEvent);
   console.log("Current events array:", events);
 
-  // Save the updated events array to the file
   try {
     fs.writeFileSync(eventsFilePath, JSON.stringify(events, null, 2));
     console.log("Events successfully written to file.");

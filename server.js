@@ -1,15 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+require('dotenv').config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-const { addEvent } = require('./db'); // Import the addEvent function from db.js
+const { addEvent } = require('./db'); 
 
-// Replace this with your actual OAuth token
-const EVENTBRITE_TOKEN = 'W5TACDM6GESNY75BFGZH';
-const ORGANIZATION_ID = '2704452906331';
+
+const EVENTBRITE_TOKEN = process.env.EVENTBRITE_TOKEN;
+const ORGANIZATION_ID = process.env.ORGANIZATION_ID;
 
 app.post('/create-event', async (req, res) => {
   const eventData = req.body;
@@ -26,10 +27,8 @@ app.post('/create-event', async (req, res) => {
       }
     );
 
-        // Add the sent data and received eventId to the "database"
         addEvent(eventData, response.data.id);
         
-    // Send back the event ID
     res.json({ success: true, eventId: response.data.id });
   } catch (error) {
     console.error('Error creating event:', error.response?.data || error.message);

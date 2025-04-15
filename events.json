@@ -13,5 +13,20 @@
     "currency": "USD",
     "eventId": "1325653428089",
     "timestamp": "2025-04-15T18:04:55.415Z"
+  },
+  {
+    "name": "test 1",
+    "description": "test 2 DB",
+    "start": {
+      "timezone": "America/Los_Angeles",
+      "utc": "2025-04-16T05:49:00Z"
+    },
+    "end": {
+      "timezone": "America/Los_Angeles",
+      "utc": "2025-04-16T17:49:00Z"
+    },
+    "currency": "USD",
+    "eventId": "1325658673779",
+    "timestamp": "2025-04-15T18:12:00.383Z"
   }
 ]
