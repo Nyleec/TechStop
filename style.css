@@ -286,3 +286,42 @@ body {
 .social-icons a:hover {
     color: #0078d7;
 }
+
+/* Contact Form */
+.contact-form {
+    display: flex;
+    flex-direction: column; /* Stack the input fields vertically */
+    gap: 1rem; /* Add spacing between form elements */
+    max-width: 400px; /* Optional: Limit the form width */
+    margin: 0 auto; /* Center the form horizontally */
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Make inputs take full width of the form */
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    background-color: #e63946; /* Red background for the button */
+    color: #fff; /* White text for contrast */
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #b71c1c; /* Darker red on hover */
+}
