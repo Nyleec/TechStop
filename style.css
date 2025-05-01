@@ -7,9 +7,12 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
+    line-height: 1.8; /* Increase line height for better readability */
+    font-size: 16px; /* Set a base font size */
+    color: #333; /* Use a dark gray color for text */
+    background-color: #ffffff; /* Use a white background for better contrast */
+    margin: 0;
+    padding: 0;
 }
 
 /* Header */
@@ -37,7 +40,7 @@ body {
 }
 
 .nav-link {
-    color: #fff;
+    color: #0078d7; /* Use a modern blue color for links */
     text-decoration: none;
     margin: 0 1rem;
     font-weight: 700;
@@ -45,13 +48,19 @@ body {
 }
 
 .nav-link:hover {
-    color: #00bcd4;
+    color: #0056a3; /* Darker blue on hover for better contrast */
 }
 
 /* Main Content */
 .main-content {
-    padding: 2rem;
-    text-align: center;
+    min-height: 100vh; /* Ensures the section fills the full height of the viewport */
+    display: flex; /* Enables flexbox for centering content */
+    flex-direction: column; /* Ensures content stacks vertically */
+    justify-content: center; /* Centers content vertically */
+    align-items: center; /* Centers content horizontally */
+    padding: 2rem; /* Adds some padding around the content */
+    background-color: #f9f9f9; /* Light gray background for subtle contrast */
+    text-align: center; /* Centers text inside the section */
 }
 
 .slideshow {
@@ -76,18 +85,23 @@ body {
 
 /* Company Description */
 .company-description {
-    margin: 2rem 0;
+    max-width: 800px; /* Restrict the width of the text for better readability */
+    margin: 2rem auto; /* Center the text block and add spacing */
+    font-size: 18px; /* Slightly larger font size for better readability */
+    color: #444; /* Slightly lighter gray for text */
+    line-height: 1.8; /* Add more spacing between lines */
 }
 
-.cta-link {
-    color: #00bcd4;
+/* Links */
+.nav-link, .cta-link {
+    color: #0078d7; /* Use a modern blue color for links */
     text-decoration: none;
     font-weight: 700;
     transition: color 0.3s ease;
 }
 
-.cta-link:hover {
-    color: #00796b;
+.nav-link:hover, .cta-link:hover {
+    color: #0056a3; /* Darker blue on hover for better contrast */
 }
 
 /* Footer */
