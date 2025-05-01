@@ -3,74 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStop</title>
+    <title>Services - TechStop</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="./index" class="nav-link">Home</a></li>
+                <li><a href="./about" class="nav-link">About Us</a></li>
+                <li><a href="./services" class="nav-link active">Services</a></li>
+                <li><a href="./contact" class="nav-link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Full-width Header Image -->
-    <div class="header-image" style="background-image: url('header2.png');">
-<!-- <div class="company-name">TechStop</div> --> 
-        </div>
-    </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="services-section">
+            <h1>Our Services</h1>
+            <ul class="services-list">
+                <li>Smart Home Installations</li>
+                <li>Network Setup and Maintenance</li>
+                <li>IT Support and Troubleshooting</li>
+                <li>Hardware and Software Upgrades</li>
+                <li>Custom Technology Solutions</li>
+            </ul>
+        </section>
+    </main>
 
-    <!-- Horizontal Navigation Bar for PC -->
-    <a href="./index.html" class="nav-link top-left">Home</a>
-    <a href="./about.html" class="nav-link top-right">About Us</a>
-    <a href="./services.html" class="nav-link bottom-left">Services</a>
-    <a href="./contact.html" class="nav-link bottom-right">Contact Us</a>
-
-     <!-- Floating Menu -->
-    <div class="floating-menu">
-        <button class="menu-button" data-target="section1">General IT</button>
-        <button class="menu-button" data-target="section2">Residential IT</button>
-        <button class="menu-button" data-target="section3">Commercial IT</button>
-        <button class="menu-button" data-target="section4">Cloud Services</button>
-    </div>
-
-    <div class="container">
-
-        <div id="section1" class="content-section">
-            <p>
-                App and device troubleshooting.
-            </p>
-            <p>
-                Technology instructional sessions.
-            </p>
-        </div>
-        <div id="section2" class="content-section">
-            <p>
-                Wifi installation/set-up with a focus on security of your home and devices.
-            </p>
-            <p>
-                Smart device installation and management, such as smart thermostats and televisions.
-            </p>
-            <p>
-                Device mounting and cable management.
-            </p>
-        </div>
-        <div id="section3" class="content-section">
-            <p>
-                Managed IT services like cyber security, Windows profiles and device administration.
-            </p>
-            <p> 
-                Computer, POS, and IOT device installment, monitoring and troubleshooting.
-            </p>
-            <p>
-                Application and website building.
-            </p>
-        </div>
-        <div id="section4" class="content-section">
-            <p>
-                App, website, storage hosting.
-            </p>
-            <p>
-                Firewall / VPN configuration and monitoring.
-            </p>
-        </div>
-
-    </div>
-
-    <script src="script.js"></script>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 TechStop. All rights reserved.</p>
+    </footer>
 </body>
 </html>

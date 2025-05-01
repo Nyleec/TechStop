@@ -3,44 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStop</title>
+    <title>Contact Us - TechStop</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a href="./index" class="nav-link">Home</a></li>
+                <li><a href="./about" class="nav-link">About Us</a></li>
+                <li><a href="./services" class="nav-link">Services</a></li>
+                <li><a href="./contact" class="nav-link active">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Full-width Header Image -->
-    <div class="header-image" style="background-image: url('header2.png');">
-<!-- <div class="company-name">TechStop</div> --> 
-        </div>
-    </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="contact-section">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you! Reach out to us using the form below or via email at <a href="mailto:support@techstop.com">support@techstop.com</a>.</p>
+            <form class="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
 
-    <!-- Horizontal Navigation Bar for PC -->
-    <a href="./index.html" class="nav-link top-left">Home</a>
-    <a href="./about.html" class="nav-link top-right">About Us</a>
-    <a href="./services.html" class="nav-link bottom-left">Services</a>
-    <a href="./contact.html" class="nav-link bottom-right">Contact Us</a>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
 
-    <div class="container">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
 
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
 
-        <!-- Slideshow container -->
-        <!-- <div class="slideshow">
-            <div class="slides">
-                <div class="slide" style="background-image: url('LOGO.png');"></div>
-                <div class="slide" style="background-image: url('logo3.png');"></div>
-                <div class="slide" style="background-image: url('logo3.png');"></div> 
-            </div>
-        </div> -->
-
-                <!-- Company Description -->
-                <div class="company-description">
-                    <p> 
-                        We're located in the Greater Washington D.C area, but offer secured remote assistance where applicable. Please visit our services page for a more detailed list of ways we can grow into the future together.
-                    </p>
-                </div>
-
-    </div>
-
-    <script src="script.js"></script>
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 TechStop. All rights reserved.</p>
+    </footer>
 </body>
 </html>
