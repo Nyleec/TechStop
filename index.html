@@ -6,6 +6,8 @@
     <title>TechStop</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header Section -->
@@ -22,18 +24,17 @@
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Slideshow Section 
-        <section class="slideshow">
-            <div class="slides">
-                <div class="slide" style="background-image: url('./svg/logo-no-background.svg');" aria-label="TechStop Logo"></div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Welcome to TechStop</h1>
+                <p>Your one-stop solution for all technical concerns.</p>
+                <a href="./services" class="cta-button">Explore Our Services</a>
             </div>
-        </section>-->
+        </section>
 
         <!-- Company Description -->
         <section class="company-description">
-            <p>
-                Welcome to TechStop! We aim to be your one-stop solution for all technical concerns in residential and commercial spaces.
-            </p>
             <p>
                 Our team of experts is dedicated to providing top-notch services, ensuring that your technology works seamlessly.
                 Whether it's installation, maintenance, or troubleshooting, we have you covered.
@@ -48,13 +49,28 @@
                 At TechStop, we are not just a service provider; we are your technology partner.
             </p>
         </section>
+
+        <!-- Animated Section -->
+        <section class="animated-section" data-aos="fade-up">
+            <h2>Why Choose Us?</h2>
+            <p>We provide reliable, innovative, and customer-focused technology solutions.</p>
+        </section>
     </main>
 
     <!-- Footer Section -->
     <footer class="footer">
         <p>&copy; 2025 TechStop. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
     </footer>
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
