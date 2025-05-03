@@ -256,7 +256,7 @@ body {
 
 .service-card a.learn-more {
     display: inline-block; /* Make the link a button */
-    background-color: #e63946; /* Red background for the button */
+    #e63946/* Red background for the button */
     color: #fff; /* White text for contrast */
     padding: 0.5rem 1rem; /* Add padding to the button */
     border-radius: 5px; /* Rounded corners */
