@@ -143,6 +143,11 @@ body {
     color: #0056a3; /* Darker blue on hover for CTA links */
 }
 
+a:visited {
+    text-decoration: none;
+    color: inherit; /* Optional: Keeps the color consistent with unvisited links */
+}
+
 /* Hero Section */
 .hero {
     background-image: url('./images/logow.png'); /* Replace with your image */
@@ -256,7 +261,7 @@ body {
 
 .service-card a.learn-more {
     display: inline-block; /* Make the link a button */
-    #e63946/* Red background for the button */
+   background-color: #e63946;/* Red background for the button */
     color: #fff; /* White text for contrast */
     padding: 0.5rem 1rem; /* Add padding to the button */
     border-radius: 5px; /* Rounded corners */
@@ -423,8 +428,8 @@ body {
     margin-top: 1rem;
     padding: 1rem;
     background-color: #f9f9f9; /* Light background for contrast */
-    border: 1px solid #ddd; /* Light border */
-    border-radius: 5px; /* Rounded corners */
+    border: none; /* Removes any border */
+    padding: 10px; /* Optional: Adjust padding for spacing */
     display: none; /* Hidden by default */
     animation: fadeIn 0.3s ease-in-out; /* Optional: Add a fade-in effect */
 }
