@@ -94,7 +94,7 @@ body {
     min-height: 100vh; /* Ensures the section fills the full height of the viewport */
     display: flex; /* Enables flexbox for centering content */
     flex-direction: column; /* Ensures content stacks vertically */
-    justify-content: center; /* Centers content vertically */
+    justify-content: start; /* Content is positioned at the top of the container */
     align-items: center; /* Centers content horizontally */
     padding: 2rem; /* Adds some padding around the content */
     background-color: #f9f9f9; /* Light gray background for subtle contrast */
@@ -159,7 +159,6 @@ a:visited {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 60vh;
     max-height: 400px; /* Set a maximum height for the hero section */
     overflow: hidden; /* Ensures content doesn't overflow the max height */
 }
