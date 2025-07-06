@@ -28,7 +28,7 @@ body {
 }
 
 .navbar {
-    background-color: #333;
+    background-color: #000;
     padding: 1rem 0;
 }
 
@@ -60,7 +60,7 @@ body {
 }
 
 .nav-link {
-    color: #e63946; /* White text for links */
+    color: #e10000; /* White text for links */
     text-decoration: none;
     margin: 1rem 0;
     font-size: 1.2rem;
@@ -81,7 +81,7 @@ body {
 .hamburger {
     display: none; /* Hidden by default */
     font-size: 1.5rem;
-    color: #e63946;
+    color: #e10000;
     cursor: pointer;
     position: absolute;
     top: 1rem;
@@ -177,7 +177,7 @@ a:visited {
 }
 
 .cta-button {
-    background-color: #e63946; /* Red background for the button */
+    background-color: #e10000; /* Red background for the button */
     color: #fff; /* White text for contrast */
     padding: 0.75rem 1.5rem;
     text-decoration: none;
